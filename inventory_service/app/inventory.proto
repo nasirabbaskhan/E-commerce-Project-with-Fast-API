@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package inventory;
+
+// Inventory message representing an inventory item
+message Inventory_Proto {
+  int32 product_id = 1;  // Foreign key to product service
+  int32 quantity = 2;  // Quantity of the product in inventory
+  int32 location_id = 3;  // Foreign key to Location
+ 
+   // RelationShip
+  Location_Proto location = 4;  // One-to-one relationship: inventory is located in one location
+}
+
+// Location message representing a location
+message Location_Proto {
+  string location_name = 1;  // Name of the location
+  string address = 2;  // Address of the location, optional
+
+   // RelationShip
+  repeated Inventory_Proto inventory_items = 3;  // One-to-many relationship: a location has multiple inventory items
+}

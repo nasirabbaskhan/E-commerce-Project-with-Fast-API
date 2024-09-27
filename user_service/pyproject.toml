@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "app"
+version = "0.1.0"
+description = ""
+authors = ["Nasir Abbas <akhtarabbas.islamicreaction@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.112.1"
+uvicorn = {extras = ["standard"], version = "^0.30.6"}
+sqlmodel = "^0.0.22"
+psycopg = {extras = ["binary"], version = "^3.2.2"}
+psycopg2-binary = "^2.9.9"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+aiokafka = "^0.11.0"
+passlib = "^1.7.4"
+pydantic = {extras = ["email"], version = "^2.9.2"}
+types-python-jose = "^3.3.4.20240106"
+protobuf = "^5.28.2"
+types-protobuf = "^5.27.0.20240920"
+
+[tool.poetry.scripts]
+dev= "app.main:start"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
